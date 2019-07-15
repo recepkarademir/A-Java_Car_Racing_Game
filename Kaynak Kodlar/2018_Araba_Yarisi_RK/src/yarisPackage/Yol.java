@@ -59,14 +59,16 @@ public class Yol extends JPanel implements ActionListener, Runnable, Sabitler
 		int kmpV=0;
 		kmpV=(int)(v*1.609);
 		g.setColor(Color.BLACK);
+		
 		Font font = new Font("Arial", Font.BOLD, 22);
 		g.setFont(font);
-		String str = "Hýz : "+ kmpV +" Kmh "+" Gittiðin yol : " + s + " m   Bitiþ için: " + ACHIEVE_S + " m";
+		String str = "Hýz : "+ kmpV +" Kmh "+" Gittiðin yol : " + s + " m   Bitiþ için: " + (ACHIEVE_S-s) + " m";
 		g.drawString(str, 180, 30); // bilgilerin yazýlacaðý konumlar
 		
 		Iterator<Rakip> i = enemies.iterator();
 		while(i.hasNext()) {
-			Rakip e = i.next();
+			Rakip e = new Rakip(kmpV, kmpV, kmpV, null);
+			e=i.next();
 			if(e.x >= 2500 || e.x <= -2500) // araçlarýn geçildikten ne kadar sonra haritadan silineceði
 			{
 				i.remove();

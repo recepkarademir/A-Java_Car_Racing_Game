@@ -14,6 +14,7 @@ public class Main implements Sabitler
 		frame.setLocationRelativeTo(null);
 		frame.add(new Yol());
 		frame.setVisible(true);
+		frame.setTitle("CAR RACING");
 	}
 
 }

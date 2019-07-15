@@ -90,7 +90,7 @@ public class Player implements Sabitler {
 		}
 		else if(key == KeyEvent.VK_LEFT) 
 		{
-			v *= (0.70); // araç fren yapýnca %70 lk bir yavaþlama olacak
+			v *= (0.70); // araç fren yapýnca yavaþlama olacak
 			if(v>2)
 			{
 				if(v>45) // kullanýcý çok hýzlýysa arabasý bu görüntüyle deðiþtirilir.
@@ -113,6 +113,7 @@ public class Player implements Sabitler {
 			
 			if(v!=0) // araç durmamýþsa yön deðitirebilir.
 			{
+				v *= (0.90); // araç yön deðiþtirince yavaþlama olacak
 				dy = 7; // 5 px yön deðiþtirir
 			}
 			img = img_l;
@@ -123,6 +124,7 @@ public class Player implements Sabitler {
 			
 			if(v!=0)// araç durmamýþsa yön deðitirebilir.
 			{
+				v *= (0.90); // araç yön deðiþtirince yavaþlama olacak
 				dy = -7; // 5 px yön deðiþtirir
 			}
 			img = img_r;
